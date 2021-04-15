@@ -5,32 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- axios -->
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/aja
+x/libs/axios/0.20.0/axios.min.js"></script>
+
     <title>zuingo88 - vue-email-list</title>
     <link rel="stylesheet" href="css/main.css" />
+    <script src="js/script.js"></script>
   </head>
   <body>
-    <div class="screen flex_col just_cen align_cen">
-      <div class="mail_list">
-        <ul>
-          <li>
-            <div class="mail_row flex space_bet align_cen">
-              <div class="bee">
-                <img src="img/ape.png" alt="" />
+    <div id="app" class="screen">
+      <div class="container flex just_cen align_cen">
+        <div class="presentation">
+          <div class="filter">
+            <h1>
+              Premi il bottone e scopri i prossimi 10 vincitori di un bel pacco
+              vuoto!!!
+            </h1>
+          </div>
+          <button id="myBtn" @click="getMails">Premi!</button>
+        </div>
+        <div class="mail_list">
+          <ul>
+            <li v-for="(mail, i) in mails">
+              <div class="mail_row flex space_bet align_cen">
+                <div class="bee">
+                  <img src="img/ape.png" alt="" />
+                </div>
+                <div class="mail">
+                  <p>{{ mail }}</p>
+                </div>
+                <div class="settings">
+                  <span
+                    ><a href="https://mail.google.com/" title="Contatta"
+                      ><i class="fas fa-envelope"></i></a
+                  ></span>
+                  <span title="Elimina" @click="deleteMail"><i class="fas fa-times"></i></span>
+                </div>
               </div>
-              <div class="mail">
-                  <p>mail</p>
-              </div>
-              <div class="settings">
-                  <span><i class="fas fa-times"></i></span>
-              </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>
