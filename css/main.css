@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.screen {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/sipario.jpg);
+    background-size: 100% 100%;
+}
+
+/* regole flex */
+.flex {
+  display: flex;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex_col_rev {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.just_cen {
+  justify-content: center;
+}
+
+.space_bet {
+  justify-content: space-between;
+}
+
+.align_cen {
+  align-items: center;
+}
+
+
+/* list */
+li {
+    list-style-type: none;
+    height: 60px;
+    width: 400px;
+    background-color: #bea6a0;
+    border: solid 1px black;
+    border-radius: 20px;
+}
+
+.mail_row {
+    height: 100%;
+    padding: 5px 10px;
+}
+
+.bee {
+    height: 30px;
+    width: 35px;
+}
+
+.bee img {
+    height: 100%;
+    width: 100%;
+}
+
+.mail {
+    flex-grow: 1;
+    margin: 0 15px;
+}
+
+.settings span {
+    cursor: pointer;
+}
