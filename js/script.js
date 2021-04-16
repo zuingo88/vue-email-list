@@ -15,7 +15,8 @@ function initVue() {
             .then((response) => {
               this.mail = response.data.response;
               this.mails.push(this.mail);
-            });
+            })
+            .catch(() => console.log('error'))
         }
         console.log(this.mails);
       },
